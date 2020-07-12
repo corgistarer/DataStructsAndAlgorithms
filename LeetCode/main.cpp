@@ -5,9 +5,9 @@
 int main()
 {
 	vector<int> nums = { 2,5,7,11, 100, 200, 300};
-	int target = 301;
+	int target = 302;
 	TwoSum twosum;
-	vector<int> index = twosum.twoSum(nums, target);
+	vector<int> index = twosum.twoSum2(nums, target);
     std::cout << "TwoSum Test:\n";
 	if (0 != index.size())
 	{

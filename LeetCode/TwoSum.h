@@ -33,7 +33,7 @@ public:
 		unordered_map<int, int>hashmap;
 		for (int i = 0; i < nums.size(); i++) 
 		{
-				if (hashmap[target-nums[i]] && hashmap[target-nums[i] != i+1])
+				if (hashmap[target-nums[i]] && hashmap[target-nums[i]]!= i+1)
 				{
 					index.push_back(i);
 					index.push_back(hashmap[target - nums[i]]-1);
