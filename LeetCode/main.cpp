@@ -2,7 +2,10 @@
 #include "TwoSum.h"
 #include "AddTwoNumbers.h"
 #include "LongestSubstringWithoutRepeatingCharacters.h"
+#include "MedianofTwoSortedArrays.h"
 
+// No.4 寻找两个有序数组的中位数
+void test_findMdianSortedArrays(vector<int> &num1, vector<int> &num2);
 
 // No.3 无重复字符的最长子串的长度
 void test_lengthOfLongestSubstring(string s);
@@ -18,10 +21,16 @@ void test_TwoSum(vector<int> &nums, int target);
 
 int main()
 {
-	// No.3 无重复字符的最长子串的长度
-	string str;
-	getline(cin, str);
-	test_lengthOfLongestSubstring(str);
+	// No.4 寻找两个有序数组的中位数
+	vector<int> nums1 = { 1,2,3,4,5,6,7,8,9};
+	vector<int> nums2 = { 2,3,4,5,6 };
+	test_findMdianSortedArrays(nums1, nums2);
+
+	//// No.3 无重复字符的最长子串的长度
+	//string str;
+	//getline(cin, str);
+	//test_lengthOfLongestSubstring(str);
+
 	//// No.2 两数相加
 	//auto list1 = createListNode({1 });
 	//auto list2 = createListNode({ 9, 9});
@@ -39,11 +48,19 @@ int main()
 	return 0;
 }
 
+// No.4 寻找两个有序数组的中位数
+void test_findMdianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
+	MedianofTwoSortedArrays motsa;
+	double res = motsa.findMdianSortedArrays(nums1, nums2);
+	cout << res;
+}
+// No.3 无重复字符的最长子串的长度
 void test_lengthOfLongestSubstring(string s) {
 	LongestSubstringWithoutRepeatingCharacters lswrc;
 	int ans = lswrc.lengthOfLongestSubstring(s);
 	cout << ans;
 }
+
 // No.2 两数相加
 ListNode* createListNode(vector<int> vals)
 {
@@ -90,7 +107,6 @@ void test_AddTwoNums(ListNode* l1, ListNode* l2) {
 }
 
 // No.1 两数之和
-
 void test_TwoSum(vector<int> &nums, int target) {
 	TwoSum twosum;
 	vector<int> index = twosum.twoSum2(nums, target);
