@@ -1,6 +1,11 @@
 ﻿#include <iostream>
 #include "TwoSum.h"
 #include "AddTwoNumbers.h"
+#include "LongestSubstringWithoutRepeatingCharacters.h"
+
+
+// No.3 无重复字符的最长子串的长度
+void test_lengthOfLongestSubstring(string s);
 
 // No.2 两数相加
 ListNode* createListNode(vector<int> vals);
@@ -13,14 +18,18 @@ void test_TwoSum(vector<int> &nums, int target);
 
 int main()
 {
-	// No.2 两数相加
-	auto list1 = createListNode({1 });
-	auto list2 = createListNode({ 9, 9});
-	printListNode(list1);
-	printListNode(list2);
-	test_AddTwoNums(list1, list2);
-	freeListNode(list1);
-	freeListNode(list2);
+	// No.3 无重复字符的最长子串的长度
+	string str;
+	getline(cin, str);
+	test_lengthOfLongestSubstring(str);
+	//// No.2 两数相加
+	//auto list1 = createListNode({1 });
+	//auto list2 = createListNode({ 9, 9});
+	//printListNode(list1);
+	//printListNode(list2);
+	//test_AddTwoNums(list1, list2);
+	//freeListNode(list1);
+	//freeListNode(list2);
 
 	//// No.1 两数之和
 	//vector<int> nums = { 2,5,7,11, 100, 200, 300};
@@ -30,6 +39,11 @@ int main()
 	return 0;
 }
 
+void test_lengthOfLongestSubstring(string s) {
+	LongestSubstringWithoutRepeatingCharacters lswrc;
+	int ans = lswrc.lengthOfLongestSubstring(s);
+	cout << ans;
+}
 // No.2 两数相加
 ListNode* createListNode(vector<int> vals)
 {
